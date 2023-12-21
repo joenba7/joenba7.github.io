@@ -176,7 +176,7 @@ nc: connect to dns.example.com port 52 (tcp) timed out: Operation now in progres
 
 As far I know, the are two main ways to do this.
 
-#### **First** way
+#### First way
 
 Start listening on a port of your choice:
 
@@ -192,7 +192,7 @@ ncat <server> 10100
 
 Type in some text and the line will appear on the other machine when you press enter. You won't be able to see who wrote what, but hey, it's good enough if you want to communicate with someone.
 
-#### **Second** way
+#### Second way
 
 The new fancier way of starting a chat-server is by using **chat**:
 

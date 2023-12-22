@@ -1,18 +1,8 @@
 ---
-title: 'Acer Aspire One Tips and Tricks'
-date: '2008-08-06T11:04:19+02:00'
-status: publish
-permalink: /2008/08/06/acer-aspire-one-tips-and-tricks
-author: 'Jorge Enrique Barrera'
-excerpt: ''
-type: post
-id: 450
+title: Acer Aspire One Tips and Tricks
+date: 2008-08-06
 category:
     - Linux
-tag: []
-post_format: []
-dsq_thread_id:
-    - '625245090'
 ---
 **Unfortunately, I no longer maintain this guide. Being that I myself now use Fedora for the Acer Aspire One, I don’t spend much time investigating how to tweak Linpus. All things you try based on this guide are at your own risk! I still recommend using http://www.aspireoneuser.com/forum/ for further questions about the Acer Aspire One. If you need help on IRC, you can find me on the channel #linuxhjelp on the IRC-network DALnet (irc.dal.net).**
 

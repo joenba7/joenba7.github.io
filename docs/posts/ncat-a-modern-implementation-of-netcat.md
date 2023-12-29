@@ -15,6 +15,8 @@ tags:
 
 In this short post, we’ll go through a couple of examples to see exactly what uses this tool has. I’m currently using **ncat** version 7.01, in Ubuntu 16.04. **ncat** is a part of the **nmap** package in Ubuntu.
 
+<!-- more -->
+
 [](https://gitlab.redpill-linpro.com/rl/sysadvent/blob/master/_posts/2016-12-10-ncat.md#shiny-new-things)Shiny new things
 -------------------------------------------------------------------------------------------------------------------------
 

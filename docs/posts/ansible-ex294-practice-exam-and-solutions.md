@@ -22,6 +22,8 @@ I’ve also only used 4 VM’s in total, 1 controller and 3 nodes, and not 4 nod
 
 Here are the tips that I’ve found helpful so far:
 
+<!-- more -->
+
 - **ansible** and **ansible-playbook** share most of it’s syntax. So if it’s **-b** to use **—****become** on **ansible-playbook**, then it’s most likely the same with **ansible**.
 - The most important tip of all – use **ansible-doc**! **ansible-doc &lt;module&gt;** (like **ansible-doc user**) will not only give you a list of attributes that you can use, but if you see almost at the bottom of the page, there are examples!
 - Make sure that all of the services that are supposed to come back up at boot, do so! Make the services persistent, if the exam says so!

@@ -1,0 +1,9 @@
+---
+title: Mac OS X 10.5 (Leopard) on a PowerBook G4 12”
+date: 2008-04-16
+authors:
+    - jorge
+categories:
+    - Apple
+---
+I briefly wrote an entry about how getting VLC to be your default DVD-playing application, and how to get it to start viewing a DVD you’ve inserted automatically. I even mentioned that I had installed Mac OS X 10.5 (Leopard) on my Powerbook. I’ll go into further detail about that. The installation went okay, BUT, it took ages. One and a half hour perhaps, and I was tempted to reboot to see if starting the process all over again would do it good. But one thing did occur to me during the installation – it was 9G with data that was being installed. Not your usual stripped 150MB installation of Debian, eh. So I waited, and waited. And finally it was installed. I actually think my PowerBook was handling Leopard smoother than Tiger. But it’s probably all in my head. The specifications for my Powerbook G4 12?; 1.5Ghz processor, 512MB RAM, 75G disk (just about), you know, a pretty standard Powerbook. I even ordered 1G memory for the Powerbook yesterday, and it’ll hopefully be arriving today, working miracles with my machine. Now, having said that Leopard is working fine so far, the native DVD-playing software isn’t. In fact, by running the application I’m guaranteeing myself a reboot – really. It locks up the PB so bad, waiting ages doesn’t really help. So what I did was that I just uninstalled the software, along with iTunes and some other crap I didn’t need, downloaded VLC and set that as my default DVD playing software. You gotta love VLC. I haven’t really tested heavy applications on the PowerBook, as I use it as a work/media computer. That means having Terminal, SSHKeychain, Safari, Adium and VLC up and going. Working great so far. Now to see how long it lasts. ![;)](http://jorge.fbarr.net/blog/page/wp-includes/images/smilies/icon_wink.gif)

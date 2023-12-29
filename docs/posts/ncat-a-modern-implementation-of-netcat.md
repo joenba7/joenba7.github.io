@@ -1,22 +1,22 @@
 ---
 title: ncat, a modern implementation of netcat
 date: 2016-12-10
-authors: 
+authors:
     - jorge
-category:
+categories:
     - Linux
-tag:
+tags:
     - cat
     - nc
     - ncat
     - netcat
 ---
+**ncat** is a utility that is like the UNIX **cat** command but for network connections. It’s based on the original **netcat** and comes with a couple of more modern features.
 
-**ncat** is a utility that is like the UNIX **cat** command but for network connections. It's based on the original **netcat** and comes with a couple of more modern features.
+In this short post, we’ll go through a couple of examples to see exactly what uses this tool has. I’m currently using **ncat** version 7.01, in Ubuntu 16.04. **ncat** is a part of the **nmap** package in Ubuntu.
 
-In this short post, we'll go through a couple of examples to see exactly what uses this tool has. I'm currently using **ncat** version 7.01, in Ubuntu 16.04. **ncat** is a part of the **nmap** package in Ubuntu.
-
-## Shiny new things
+[](https://gitlab.redpill-linpro.com/rl/sysadvent/blob/master/_posts/2016-12-10-ncat.md#shiny-new-things)Shiny new things
+-------------------------------------------------------------------------------------------------------------------------
 
 A couple of the features of **ncat**, some of which are new, are:
 
@@ -25,11 +25,12 @@ A couple of the features of **ncat**, some of which are new, are:
 - Support for SSL
 - Ability to specify specific hosts to allow or deny access to in listen mode
 
-While the new features are great, it's important to note that **ncat** is not 100% reverse compatible with the original **netcat**.
+While the new features are great, it’s important to note that **ncat** is not 100% reverse compatible with the original **netcat**.
 
-## Examples
+[](https://gitlab.redpill-linpro.com/rl/sysadvent/blob/master/_posts/2016-12-10-ncat.md#examples)Examples
+---------------------------------------------------------------------------------------------------------
 
-Let's continue with a couple of examples to get you started.
+Let’s continue with a couple of examples to get you started.
 
 ### IPv4 or IPv6?
 
@@ -41,7 +42,7 @@ To force ncat to only use either IPv4 og IPv6, use:
 ..as in:
 
 ```
-ncat -6 <server> 10100
+ncat -6  10100
 ```
 
 ..to connect to a server only through IPv6.
@@ -76,7 +77,7 @@ The option **-C** is used because it requires CRLF line endings.
 
 ### Chaining
 
-An example from **nmap**'s website; sending a log file from **host1** to **host3**, by way of **host2**:
+An example from **nmap**’s website; sending a log file from **host1** to **host3**, by way of **host2**:
 
 #### host3
 
@@ -100,7 +101,7 @@ ncat --send-only host2 < log.txt
 
 One of the more useful tricks is the ability to clone partitions over the network.
 
-On the system you'd like to clone the partition from, do:
+On the system you’d like to clone the partition from, do:
 
 ```
 dd if=/dev/sda | ncat -l 10100
@@ -109,7 +110,7 @@ dd if=/dev/sda | ncat -l 10100
 ..and on the receiving machine:
 
 ```
-ncat <server> 10100 | dd of=/dev/sda
+ncat  10100 | dd of=/dev/sda
 ```
 
 To speed up the process of transfer you can always throw in **gzip** for compression:
@@ -121,7 +122,7 @@ dd if=/dev/sda | gzip -9 | ncat -l 10100
 ..and:
 
 ```
-ncat <server> 10100 | gzip -d | dd of=/dev/sda
+ncat  10100 | gzip -d | dd of=/dev/sda
 ```
 
 ### Web server
@@ -145,17 +146,17 @@ ncat -l 10100 --ssl --send-only < secret.tar.gz
 ..and on the receiving end:
 
 ```
-ncat <server> 10100 --ssl > secret.tar.gz
+ncat  10100 --ssl > secret.tar.gz
 ```
 
-The option **send-only** does what it says - it only sends data and ignores received.
+The option **–send-only** does what it says – it only sends data and ignores received.
 
 ### Ports
 
 Need to check if a port is open? Try:
 
 ```
-nc -z -v -w5 <host> <port>
+nc -z -v -w5  
 ```
 
 This example checks if port **53** is open, with a timeout of **5** seconds. When a port is open:
@@ -165,7 +166,7 @@ $ nc -z -v -w5 dns.example.com 53
 Connection to dns.example.com 53 port [tcp/domain] succeeded!
 ```
 
-..and when it's closed:
+..and when it’s closed:
 
 ```
 $ nc -z -v -w5 dns.example.com 52
@@ -176,7 +177,7 @@ nc: connect to dns.example.com port 52 (tcp) timed out: Operation now in progres
 
 As far I know, the are two main ways to do this.
 
-#### First way
+#### **First** way
 
 Start listening on a port of your choice:
 
@@ -187,14 +188,14 @@ ncat -l 10100
 ..and connect to it from another machine:
 
 ```
-ncat <server> 10100
+ncat  10100
 ```
 
-Type in some text and the line will appear on the other machine when you press enter. You won't be able to see who wrote what, but hey, it's good enough if you want to communicate with someone.
+Type in some text and the line will appear on the other machine when you press enter. You won’t be able to see who wrote what, but hey, it’s good enough if you want to communicate with someone.
 
-#### Second way
+#### **Second** way
 
-The new fancier way of starting a chat-server is by using **chat**:
+The new fancier way of starting a chat-server is by using **–chat**:
 
 ```
 ncat --chat -l 10100
@@ -203,17 +204,17 @@ ncat --chat -l 10100
 Users who then want to connect to the chat:
 
 ```
-ncat <server> 10100
+ncat  10100
 ```
 
 The output will be something along the lines of:
 
 ```
-<user0> Hello?
-<user5> Is it me you're looking for?
+ Hello?
+ Is it me you're looking for?
 ```
 
-The user IDs generated by **ncat** are based on the file descriptor for each connection and must be considered arbitrary. Also, you won't see `<userX>` in front of the text you type, but others will see it. The main difference when using **–chat** is that you and every user connected to the server will get a `<userX>` tag, making it easier to see who wrote what.
+The user IDs generated by **ncat** are based on the file descriptor for each connection and must be considered arbitrary. Also, you won’t see `` in front of the text you type, but others will see it. The main difference when using **–chat** is that you and every user connected to the server will get a `` tag, making it easier to see who wrote what.
 
 ### Mail client
 
@@ -254,7 +255,7 @@ The daytime service, defined in RFC 867, sends a human-readable date and time st
 ncat -l 13 --keep-open --send-only --exec "/bin/date"
 ```
 
-Add **udp** to create an UDP daytime server instead.
+Add **–udp** to create an UDP daytime server instead.
 
 ### Access control
 
@@ -276,6 +277,6 @@ ncat -l --deny 10.0.0.2
 ncat -l --allowfile trusted-hosts.txt
 ```
 
-Replace **allowfile** with **denyfile** to deny and **trusted-hosts.txt** with a file that contains the hosts to be denied.
+Replace **–allowfile** with **–denyfile** to deny and **trusted-hosts.txt** with a file that contains the hosts to be denied.
 
 These are just a few of the things that you can do with **ncat**. Have fun exploring the rest!

@@ -1,7 +1,9 @@
 ---
 title: Acer Aspire One Tips and Tricks
 date: 2008-08-06
-category:
+authors:
+    - jorge
+categories:
     - Linux
 ---
 **Unfortunately, I no longer maintain this guide. Being that I myself now use Fedora for the Acer Aspire One, I don’t spend much time investigating how to tweak Linpus. All things you try based on this guide are at your own risk! I still recommend using http://www.aspireoneuser.com/forum/ for further questions about the Acer Aspire One. If you need help on IRC, you can find me on the channel #linuxhjelp on the IRC-network DALnet (irc.dal.net).**
@@ -190,7 +192,6 @@ Enabling the Right-click Menu
 
 Usually when you’re in xfce you can right-click on the desktop to bring forth a menu. This isn’t enabled as a standard function with the desktop that comes with the Acer Aspire One. To enable it, do the following.
 
-On your desktop, under the **File** category, select **My Documents**. When this opens, select **File** and then **Terminal**. When the terminal opens, type:
 
 ```
 1
@@ -924,16 +925,13 @@ usb 2-2.1: New USB device found, idVendor=1058, idProduct=0702
 usb 2-2.1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
 usb 2-2.1: Product: External HDD
 usb 2-2.1: Manufacturer: Western Digital
-usb 2-2.1: SerialNumber: 575845363037433636303733
 usb-storage: device found at 14
 usb-storage: waiting for device to settle before scanning
 usb-storage: device scan complete
 scsi 16:0:0:0: Direct-Access     WD       1200BEVExternal  1.02 PQ: 0 ANSI: 0
-sd 16:0:0:0: [sdb] 234441648 512-byte hardware sectors (120034 MB)
 sd 16:0:0:0: [sdb] Write Protect is off
 sd 16:0:0:0: [sdb] Mode Sense: 00 00 00 00
 sd 16:0:0:0: [sdb] Assuming drive cache: write through
-sd 16:0:0:0: [sdb] 234441648 512-byte hardware sectors (120034 MB)
 sd 16:0:0:0: [sdb] Write Protect is off
 sd 16:0:0:0: [sdb] Mode Sense: 00 00 00 00
 sd 16:0:0:0: [sdb] Assuming drive cache: write through
@@ -946,7 +944,6 @@ sd 16:0:0:0: Attached scsi generic sg2 type 0
 
 So now we know that the drive has been assigned **/dev/sdb**. Let’s make the recovery usb drive then.
 
-WARNING: This next command will end up erasing your WHOLE drive, so be cautious when you type it. As root, type:
 
 ```
 1
@@ -1013,7 +1010,6 @@ Save the file, close it, and reboot. Some have reported that there’s an increa
 
 Another thing you can do to improve performance, is disabling Firefox’s cache. With IO (Input/Output) being the real bottleneck on the Acer Aspire One, disabling writing to the disk might be a good idea. When a page is loaded, Firefox will cache it into the hard disk so that it doesn’t have to be downloaded again for redisplaying. If you browse enough sites, you’ll experience that Firefox might freeze for a few seconds or so.
 
-To disable Firefox’s caching, fire up your Firefox, and in the URL-field, type:
 
 ```
 1

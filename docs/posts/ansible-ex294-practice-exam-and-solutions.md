@@ -1,21 +1,26 @@
 ---
-draft: false
+title: Ansible EX294 practice exam and solutions
+date: 2021-07-20
 authors:
-  - jorge
-date: 2023-12-14
+    - jorge
 categories:
-  - Linux
+    - Linux
+tags:
+    - ansible
+    - ex294
+    - ex407
+    - exam
+    - linux
+    - practice
+    - redhat
+    - solutions
+    - tips
 ---
-
-# Ansible EX294 practice exam and solutions
-
-I am hopefully going to take the second half of my RHCE exam this year, which is EX294. I have taken inspiration from <https://www.lisenet.com/2019/ansible-sample-exam-for-ex294/> and <https://ziyonotes.uz/rJt6DcqXr>, and have decided to provide my own answers and explanations as I myself prepare for the exam.
+I am hopefully going to take the second half of my RHCE exam this year, which is EX294. I have taken inspiration from  and , and have decided to provide my own answers and explanations as I myself prepare for the exam.
 
 I’ve also only used 4 VM’s in total, 1 controller and 3 nodes, and not 4 nodes as the practice exam suggests.
 
 Here are the tips that I’ve found helpful so far:
-
-<!-- more -->
 
 - **ansible** and **ansible-playbook** share most of it’s syntax. So if it’s **-b** to use **—****become** on **ansible-playbook**, then it’s most likely the same with **ansible**.
 - The most important tip of all – use **ansible-doc**! **ansible-doc &lt;module&gt;** (like **ansible-doc user**) will not only give you a list of attributes that you can use, but if you see almost at the bottom of the page, there are examples!
@@ -23,8 +28,8 @@ Here are the tips that I’ve found helpful so far:
 - Remember that if you enable a service, that it doesn’t mean that the change is immediate! Remember to check the **ansible-doc** page for the module if there is an **immediate** attribute that you can use.
 - Use the command **ansible all -m setup** after you have set up your inventory to see all of the variables gathered by the facts module. They might come in handy!
 
-
-## Task 1 – Ansible installation and configuration
+Task 1 – Ansible installation and configuration
+-----------------------------------------------
 
 Remember that the default location for the original **ansible.cfg** is **/etc/ansible/ansible.cfg**, which you can copy over to your local folder (in this case it’s **/home/automation/plays/**).
 
@@ -54,8 +59,8 @@ node2           ansible_host=ip.of.the.host
 node3           ansible_host=ip.of.the.host
 ```
 
-
-## Task 2 – Ad-Hoc commands
+Task 2 – Ad-Hoc commands
+------------------------
 
 What they mean by the use of “Ad-Hoc” is your typical **ansible** one liners. Which is to actually use the command **ansible**. I’ve placed the following **ansible** one liners in a file named **adhoc**. Remember to change the permissions on the file (**chmod +x adhoc**) before you run it.
 
@@ -63,7 +68,7 @@ What they mean by the use of “Ad-Hoc” is your typical **ansible** one liners
 
 In this particular case I’m connecting as the user **cloud\_user**, which will then use **sudo** to perform the commands.
 
-```bash
+```
 #!/bin/bash
 
 ansible -i inventory all -u cloud_user -b -kK -m user -a \
@@ -83,7 +88,7 @@ ansible -i inventory all -u cloud_user -b -kK -m lineinfile -a \
 
 The above is exactly the same as the playbook below (which I have named **create\_automation\_user.yml**):
 
-```yaml
+```
 ---
 
 - hosts: all
@@ -112,12 +117,12 @@ The above is exactly the same as the playbook below (which I have named **create
 ...
 ```
 
-
-## Task 3 – File content
+Task 3 – File content
+---------------------
 
 ### motd.yml
 
-```yaml
+```
 ---
 
 - hosts: all
@@ -146,12 +151,12 @@ The above is exactly the same as the playbook below (which I have named **create
 ...
 ```
 
-
-## Task 4 – Configure SSH server
+Task 4 – Configure SSH server
+-----------------------------
 
 ### sshd.yml
 
-```yaml
+```
 ---
 
 - hosts: all
@@ -181,14 +186,14 @@ The above is exactly the same as the playbook below (which I have named **create
 ...
 ```
 
-
-## Task 5 – Ansible vault
+Task 5 – Ansible vault
+----------------------
 
 ### secret.yml
 
 Use the following command to create the ansible vault file named **secret.yml**:
 
-```bash
+```
 ansible-vault create secret.yml
 ```
 
@@ -201,7 +206,6 @@ database_password: devops
 
 Use the password **devops** to protect the file you create.
 
-
 ### vault\_key
 
 Create a regular file named **vault\_key** that contains the following:
@@ -210,33 +214,28 @@ Create a regular file named **vault\_key** that contains the following:
 devops
 ```
 
-
-## Task 6 – Users and groups
+Task 6 – Users and groups
+-------------------------
 
 This is the most difficult task I’ve encountered so far.
 
 ### user\_list.yml
 
-```yaml
+```
 ---
 
 users:
   - username: alice
-    uid: 1201
   - username: vincent
-    uid: 1202
   - username: sandy
-    uid: 2201
   - username: patrick
-    uid: 2202
 
 ...
 ```
 
-
 ### users.yml
 
-```yaml
+```
 ---
 
 - hosts: all
@@ -253,7 +252,6 @@ users:
           shell: /bin/bash
           groups: wheel
           append: yes
-          uid: "{{ item.uid }}"
           password: "{{ user_password | password_hash('sha512') }}"
       with_items: "{{ users }}"
       when:
@@ -266,7 +264,6 @@ users:
           shell: /bin/bash
           groups: wheel
           append: yes
-          uid: "{{ item.uid }}"
           password: "{{ user_password | password_hash('sha512') }}"
       with_items: "{{ users }}"
       when:
@@ -324,12 +321,12 @@ users:
 ...
 ```
 
-
-## Task 7 – Scheduled tasks
+Task 7 – Scheduled tasks
+------------------------
 
 ### regular\_tasks.yml
 
-```yaml
+```
 ---
 
 - hosts: all
@@ -348,12 +345,12 @@ users:
 ...
 ```
 
-
-## Task 8 – Software repositories
+Task 8 – Software repositories
+------------------------------
 
 ### repository.yml
 
-```yaml
+```
 ---
 
 - hosts: all
@@ -375,12 +372,12 @@ users:
 ...
 ```
 
-
-## Task 9 – Create and work with roles
+Task 9 – Create and work with roles
+-----------------------------------
 
 ### mysql.yml
 
-```yaml
+```
 ---
 
 - hosts: database
@@ -393,19 +390,18 @@ users:
 ...
 ```
 
-
 ### sample-mysql/tasks/main.yml
 
 You can create an empty role, named **sample-mysql**, by running the commands:
 
-```bash
+```
 cd /home/automation/plays/roles/
 ansible-galaxy init sample-mysql
 ```
 
 I decided to go with the package **mysql-server** instead of the **mysql-community-server** that is listed in the Lisenet exam. The contents of the file **sample-mysql/tasks/main.yml**:
 
-```yaml
+```
 ---
 # tasks file for sample-mysql
 
@@ -428,14 +424,12 @@ I decided to go with the package **mysql-server** instead of the **mysql-communi
 
 - name: Create an XFS filesystem
   filesystem:
-    fstype: "xfs"
     dev: "/dev/vg_database/lv_mysql"
 
 - name: Mount lv_mysql volume on /mnt/mysql_backups
   mount:
     path: "/mnt/mysql_backups"
     src: "/dev/vg_database/lv_mysql"
-    fstype: "xfs"
     state: present
 
 - name: Ensure mysql-server and firewalld are installed
@@ -480,7 +474,6 @@ I decided to go with the package **mysql-server** instead of the **mysql-communi
 ...
 ```
 
-
 ### sample-mysql/templates/my.cnf.j2
 
 ```
@@ -498,12 +491,12 @@ log-error=/var/log/mysqld.log
 pid-file=/var/run/mysqld/mysqld.pid
 ```
 
-
-## Task 10 – Create and work with roles (some more)
+Task 10 – Create and work with roles (some more)
+------------------------------------------------
 
 ### apache.yml
 
-```yaml
+```
 ---
 
 - hosts: webserver
@@ -514,19 +507,18 @@ pid-file=/var/run/mysqld/mysqld.pid
 ...
 ```
 
-
 ### sample-apache/handlers/main.yml
 
 You can create an empty role, named **sample-apache**, by running the commands:
 
-```bash
+```
 cd /home/automation/plays/roles/
 ansible-galaxy init sample-apache
 ```
 
 As for the contents of the file **sample-apache/handlers/main.yml**:
 
-```yaml
+```
 ---
 # handlers file for sample-apache
 
@@ -539,10 +531,9 @@ As for the contents of the file **sample-apache/handlers/main.yml**:
 ...
 ```
 
-
 ### sample-apache/tasks/main.yml
 
-```yaml
+```
 ---
 # tasks file for sample-apache
 
@@ -576,12 +567,12 @@ As for the contents of the file **sample-apache/handlers/main.yml**:
 ...
 ```
 
-
-## Task 11: Download roles from Ansible Galaxy and use them
+Task 11: Download roles from Ansible Galaxy and use them
+--------------------------------------------------------
 
 Install the role named **geerlingguy.haproxy** by running these commands:
 
-```bash
+```
 cd /home/automation/plays/
 ansible-galaxy install geerlingguy.haproxy
 ```
@@ -590,7 +581,7 @@ It will install the role in the roles-location specified in **ansible.cfg**. In 
 
 ### haproxy.yml
 
-```yaml
+```
 ---
 
 - name: Configuring HAProxy
@@ -629,17 +620,16 @@ It will install the role in the roles-location specified in **ansible.cfg**. In 
 ...
 ```
 
-
-## Task 12: Security
+Task 12: Security
+-----------------
 
 We need to make sure that the package named **rhel-system-roles** is installed on the controller itself (not the nodes!). So run:
 
-```bash
+```
 yum install rhel-system-roles
 ```
 
 This will install the roles to the folder **/usr/share/ansible/roles/**.
-
 
 ### ansible.cfg
 
@@ -657,10 +647,9 @@ roles_path = /home/automation/plays/roles/:/usr/share/ansible/roles/
 
 If you look in the folder **/usr/share/ansible/roles/** now, you’ll see that there is a symlink named **linux-system-roles.selinux**, which points to **rhel-system-roles.selinux**. We will be using the symlink in the next configuration file.
 
-
 ### selinux.yml
 
-```yaml
+```
 ---
 
 - name: Enable the boolean httpd_can_network_connect
@@ -677,12 +666,12 @@ If you look in the folder **/usr/share/ansible/roles/** now, you’ll see that t
 ...
 ```
 
-
-## Task 13: Use conditionals to control play execution
+Task 13: Use conditionals to control play execution
+---------------------------------------------------
 
 ### sysctl.yml
 
-```yaml
+```
 ---
 
 - hosts: all
@@ -704,12 +693,12 @@ If you look in the folder **/usr/share/ansible/roles/** now, you’ll see that t
 ...
 ```
 
-
-## Task 14 – Use archiving
+Task 14 – Use archiving
+-----------------------
 
 ### archive.yml
 
-```yaml
+```
 ---
 
 - hosts: database
@@ -730,12 +719,12 @@ If you look in the folder **/usr/share/ansible/roles/** now, you’ll see that t
 ...
 ```
 
-
-## Task 15 – Work with Ansible facts
+Task 15 – Work with Ansible facts
+---------------------------------
 
 ### facts.yml
 
-```yaml
+```
 ---
 
 - hosts: database
@@ -756,12 +745,12 @@ If you look in the folder **/usr/share/ansible/roles/** now, you’ll see that t
 ...
 ```
 
-
-## Task 16 – Software packages
+Task 16 – Software packages
+---------------------------
 
 ### packages.yml
 
-```yaml
+```
 ---
 
 - hosts: all
@@ -783,12 +772,12 @@ If you look in the folder **/usr/share/ansible/roles/** now, you’ll see that t
 ...
 ```
 
-
-## Task 17 – Services
+Task 17 – Services
+------------------
 
 ### target.yml
 
-```yaml
+```
 ---
 
 - hosts: webserver
@@ -804,12 +793,12 @@ If you look in the folder **/usr/share/ansible/roles/** now, you’ll see that t
 ...
 ```
 
-
-## Task 18 – Create and use templates to create customized configuration files
+Task 18 – Create and use templates to create customised configuration files
+---------------------------------------------------------------------------
 
 ### server\_list.j2
 
-```yaml
+```
 {% for host in groups.all %}
 {{ hostvars[host].inventory_hostname }}
 {% endfor %}
@@ -817,7 +806,7 @@ If you look in the folder **/usr/share/ansible/roles/** now, you’ll see that t
 
 ### server\_list.yml
 
-```yaml
+```
 ---
 
 - hosts: all
@@ -830,7 +819,6 @@ If you look in the folder **/usr/share/ansible/roles/** now, you’ll see that t
         dest: "/etc/server_list.txt"
         owner: automation
         mode: 0600
-        setype: "net_conf_t"
 
 ...
 ```

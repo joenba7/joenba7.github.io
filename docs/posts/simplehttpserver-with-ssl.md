@@ -26,6 +26,8 @@ Serving HTTP on 0.0.0.0 port 8080 ...
 
 It listens on all IPv4 interfaces, and binds to the port you specify, which in my case is **8080**. The person on the other side will then be able to access the files in the directory from the outside by going to **http://server1.example.com:8080**, provided that your machine has the hostname **server1.example.com**, and that you have the port **8080** forwarded to the IP of **server1**.
 
+<!-- more -->
+
 But what if you want to provide a secure connection, say over SSL? **SimpleHTTPServer** has no built in way of doing this.
 
 But behold **ssl**, Python’s built in SSL-module!

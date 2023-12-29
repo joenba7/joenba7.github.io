@@ -19,6 +19,8 @@ For a while now I’ve been trying to set up VMware to work with multiple monito
 
 > The virtual machine must have up-to-date VMware Tools installed and running.
 
+<!-- more -->
+
 ..which it had! At this point I had installed **vmware-tools**, which is described as:
 
 > “A suite of utilities that enhances the performance of the virtual machine’s guest operating system and improves management of the virtual machine”

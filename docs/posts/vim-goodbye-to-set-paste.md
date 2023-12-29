@@ -14,6 +14,7 @@ tags:
 ---
 I’ve been using **vim** as my editor of choice ever since I started learning Linux, and something that has been bothering me for a while is how **vim** handles pasting.
 
+<!-- more -->
 
 ```
 :set paste

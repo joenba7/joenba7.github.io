@@ -5,7 +5,6 @@ authors:
     - jorge
 categories:
     - Snippets
-    - ''
 ---
 ```
 mount -t iso9660 -o ro,loop=/dev/loop0 /var/tmp/some.iso /mnt/cdrom

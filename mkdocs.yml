@@ -29,6 +29,9 @@ extra:
       link: https://www.linkedin.com/in/jorgeebarrera/
     - icon: fontawesome/brands/github
       link: https://github.com/joenba7
+  analytics:
+    provider: google
+    property: UA-30764037-1
 
 markdown_extensions:
   - pymdownx.highlight:

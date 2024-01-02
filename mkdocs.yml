@@ -31,7 +31,7 @@ extra:
       link: https://github.com/joenba7
   analytics:
     provider: google
-    property: UA-30764037-1
+    property: G-6Y65E84W34
 
 markdown_extensions:
   - pymdownx.highlight:

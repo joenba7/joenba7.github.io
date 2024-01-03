@@ -49,7 +49,7 @@ In certain cases you want to search for specific types of file. For instance,
 
 > filetype:pdf linux intitle:best \*distribution
 
-Again, let�~@~Ys break this dn:
+Again, lets break this down:
 
 - **filetype:pdf** �~@~S Searches only results of the file type you specify. .doc, .jpg, .torrent, the options are endless. Close to, anywa
 - **linux** – Just a regular search string.

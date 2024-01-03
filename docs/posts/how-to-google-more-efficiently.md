@@ -47,9 +47,11 @@ Searching for filetypes
 
 In certain cases you want to search for specific types of file. For instance,
 
+> filetype:pdf linux intitle:best \*distribution
 
-Again, let’s break this down:
+Again, let�~@~Ys break this dn:
 
+- **filetype:pdf** �~@~S Searches only results of the file type you specify. .doc, .jpg, .torrent, the options are endless. Close to, anywa
 - **linux** – Just a regular search string.
 - **intitle:best** – Only shows results with that word in the title (in this case, ‘best’)
 - **\*distribution** – Replaces itself with common terms in your search (in this case ‘Arch Linux distribution’, ‘Red Hat distribution’, will both be searched, among many others)

@@ -51,7 +51,7 @@ In certain cases you want to search for specific types of file. For instance,
 
 Again, lets break this down:
 
-- **filetype:pdf** �~@~S Searches only results of the file type you specify. .doc, .jpg, .torrent, the options are endless. Close to, anywa
+- **filetype:pdf** Searches only results of the file type you specify. .doc, .jpg, .torrent, the options are endless. Close to, anyway.
 - **linux** – Just a regular search string.
 - **intitle:best** – Only shows results with that word in the title (in this case, ‘best’)
 - **\*distribution** – Replaces itself with common terms in your search (in this case ‘Arch Linux distribution’, ‘Red Hat distribution’, will both be searched, among many others)

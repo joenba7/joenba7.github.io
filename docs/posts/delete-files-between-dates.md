@@ -5,7 +5,7 @@ authors:
     - jorge
 categories:
     - Snippets
-tag:
+tags:
     - linux
     - delete files
     - dates

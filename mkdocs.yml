@@ -9,6 +9,8 @@ theme:
     - scheme: slate
   features:
     - navigation.path
+    - content.code.copy
+    - content.code.select
 
 nav:
   - Home: index.md

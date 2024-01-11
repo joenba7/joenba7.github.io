@@ -31,7 +31,7 @@ My current **tmux** looks something like this:
 
 How does this differ from screen? Well, for starters, **tmux** makes it easy to have multiple panes up at the same time, while I found it a bit tedious to do the same with **screen**.
 
-Without going into much further detail, I recommend reading [this post on superuser.com] (https://superuser.com/questions/236158/tmux-vs-screen), which lists several differences.
+Without going into much further detail, I recommend reading [this post on superuser.com](https://superuser.com/questions/236158/tmux-vs-screen), which lists several differences.
 
 So now you have a bit of information about it, let's get cracking using it.
 

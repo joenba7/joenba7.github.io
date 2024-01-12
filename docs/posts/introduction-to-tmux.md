@@ -287,6 +287,14 @@ work properly. So I added this to my **.bashrc** file:
 export TERM=xterm-256color
 ```
 
+When I then logged completely out of the terminal, and back in, **tput** showed
+me 256 colours:
+
+```bash
+[jorge@jeb-desktop ~]$ tput colors
+256
+```
+
 You can also force **tmux** to use 256 colours, even if the terminal only says
 8, by adding a **-2** in the command:
 

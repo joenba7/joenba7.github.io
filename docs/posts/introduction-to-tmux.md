@@ -266,3 +266,30 @@ set -g status-right '#[bg=colour252,fg=colour235,bold] %Y-%m-%d %H:%M:%S #[defau
 # SSH sock environment variable
 setenv -g SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
 ```
+
+## Possible issues
+
+One of the issues I encountered, when it come to colours, was that I couldn't
+exactly match the color I had on one server to another. There were multiple
+colours that was not being shown, and that made the terminal look all wonky. I
+narrowed it down to that it was the terminal itself that didn't have all the
+colours I wanted. When I ran the command **tput**, it showed me only 8 colours:
+
+```bash
+[jorge@jeb-desktop ~]$ tput colors
+8
+```
+
+I need the entire range of 256 colours to make the theme I'm currently using
+work properly. So I added this to my **.bashrc** file:
+
+```bash
+export TERM=xterm-256color
+```
+
+You can also force **tmux** to use 256 colours, even if the terminal only says
+8, by adding a **-2** in the command:
+
+```bash
+tmux -2 new -s work
+```

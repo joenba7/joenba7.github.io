@@ -301,3 +301,9 @@ You can also force **tmux** to use 256 colours, even if the terminal only says
 ```bash
 tmux -2 new -s work
 ```
+
+To see all the colours available to you, run this oneliner:
+
+```bash
+for i in {0..255}; do     printf "\x1b[38;5;${i}mcolour${i}\x1b[0m\n"; done
+```

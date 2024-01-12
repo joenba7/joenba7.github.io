@@ -1,5 +1,6 @@
 site_name: The Road to Elysium
 site_url: https://jorge.fbarr.net
+copyright: Copyright &copy; 2007 - 2024 Jorge Enrique Barrera
 
 theme:
   name: material

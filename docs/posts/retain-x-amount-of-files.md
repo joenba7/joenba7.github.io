@@ -20,12 +20,12 @@ little script:
 ```bash
 #!/bin/bash
 
-BACKUP_DIR="/home/jorge/backup/"
-BACKUP_NUMBER="$(ls -t $BACKUP_DIR | wc -l)"
+FILE_DIR="/home/jorge/backup/"
+NUMBER_OF_FILES="$(ls -t $FILE_DIR | wc -l)"
 RETAIN=10
 
-if [ "$BACKUP_NUMBER" -ge "$RETAIN" ]; then
-    ls -t $BACKUP_DIR | sed -e "1,$RETAIN d" | xargs rm -f
+if [ "$NUMBER_OF_FILES" -ge "$RETAIN" ]; then
+    ls -t $FILE_DIR | sed -e "1,$RETAIN d" | xargs rm -f
 fi
 ```
 

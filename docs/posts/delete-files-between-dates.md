@@ -7,6 +7,7 @@ categories:
     - Snippets
 tags:
     - linux
+    - find
     - delete files
     - dates
 ---
@@ -15,6 +16,6 @@ To delete all files in a directory, between two dates, use the **find**
 command:
 
 
-```console
+```bash
 find /path/to/dir/ -type f -newermt 2022-01-01 \! -newermt 2023-01-01 -exec rm -fv '{}' +
 ```

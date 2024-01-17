@@ -15,7 +15,7 @@ tags:
 ---
 I’m currently testing out **Windows Deployment Services**, and while working with **sysprep** on a Windows 7 Pro client machine, I got the following error:
 
-[![](../../../../uploads/2017/04/sysprep-fatal-error.png)](https://jorge.fbarr.net/wp-content/uploads/2017/04/sysprep-fatal-error.png)
+![sysprep error](../images/sysprep-fatal-error.png)
 
 Nothing seemed to work, till I tried the following recipe:
 

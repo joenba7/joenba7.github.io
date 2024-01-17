@@ -9,7 +9,7 @@ tags:
     - linux
     - openssl
     - pfx
-	- pem
+    - pem
     - extract
     - certificates
 ---

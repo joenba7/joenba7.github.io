@@ -82,6 +82,10 @@ hello.txt world.txt
 jorge@applepie:~/foo $ ../shttps.py
 ```
 
-The result when you visit **https://server1.example.com:8080**?[![](../../../../uploads/2017/06/simplehttps_script_result.png)](https://jorge.fbarr.net/wp-content/uploads/2017/06/simplehttps_script_result.png)Because there is no third party verification it’s listed as insecure, but it should do the trick well enough for sharing files with others.
+The result when you visit **https://server1.example.com:8080**?
+
+![simplehttps result](../images/simplehttps_script_result.png)
+
+Because there is no third party verification it’s listed as insecure, but it should do the trick well enough for sharing files with others.
 
 If you however do want a free SSL certificate for a more permanent setup, I suggest [LetsEncrypt](https://letsencrypt.org/getting-started/)! Check out [https://letsencrypt.org/getting-started/ ](https://letsencrypt.org/getting-started/)for more information.

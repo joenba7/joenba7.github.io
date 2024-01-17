@@ -13,13 +13,13 @@ tags:
     - ssl
 ---
 
-```
+```bash
 python -m SimpleHTTPServer
 ```
 
 and the result:
 
-```
+```bash
 jorge@applepie:~ $ python -m SimpleHTTPServer 8080
 Serving HTTP on 0.0.0.0 port 8080 ...
 ```
@@ -34,13 +34,13 @@ But behold **ssl**, Python’s built in SSL-module!
 
 To create a secure connection for your **SimpleHTTPServer**, first create a self signed certificate by running the following command (if you don’t have a proper SSL-certificate, that is):
 
-```
+```bash
 openssl req -x509 -newkey rsa:4096 -keyout server1.example.com.key -out server1.example.com.pem -days 365 -nodes
 ```
 
 Now create a script named **shttps.py** that contains the following code:
 
-```
+```python
 #!/usr/bin/env python
 
 import BaseHTTPServer, SimpleHTTPServer
@@ -67,13 +67,13 @@ The only thing that needs further explanation is the variable **bind\_to\_addres
 
 Now that the certificate and key is all in place, and the script has been created, make it executable with:
 
-```
+```bash
 chmod +x shttps.py
 ```
 
 Go to the folder you’d like to share the contents of, and run the script:
 
-```
+```bash
 jorge@applepie:~ $ ls
 foo/ shttps.py
 jorge@applepie:~ $ cd foo

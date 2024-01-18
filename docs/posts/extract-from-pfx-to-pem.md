@@ -17,6 +17,7 @@ tags:
 Multiple times I've had to extract certificates from PFX files, and have them
 converted to PEM. This little script does everything:
 
+<!-- more -->
 
 ```bash
 #!/bin/bash

@@ -10,6 +10,6 @@ is either spent on my wife, kids, and even technical things when time allows!
 
 In case you were wondering:
 
-![Overgrown library](images/library.png)
+![Fields](images/fields.jpg)
 
 _An elysium is a place of ideal happiness._

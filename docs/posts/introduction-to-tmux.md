@@ -33,11 +33,11 @@ How does this differ from screen? Well, for starters, **tmux** makes it easy to 
 
 Without going into much further detail, I recommend reading [this post on superuser.com](https://superuser.com/questions/236158/tmux-vs-screen), which lists several differences.
 
-So now you have a bit of information about it, let's get cracking using it.
+So now that you have a bit of information about it, let's get cracking using it.
 
 ## Using tmux
 
-Using **tmux** isn't difficult, and it has a lot of other functions that what I
+Using **tmux** isn't difficult, and it has a lot of other functions than what I
 mention here, but this is the main way that **I** use it.
 
 

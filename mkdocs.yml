@@ -5,6 +5,7 @@ copyright: >
 
 theme:
   name: material
+  custom_dir: overrides
   font:
     text: Inconsolata
   palette: 

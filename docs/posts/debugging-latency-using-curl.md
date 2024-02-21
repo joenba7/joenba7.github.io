@@ -1,6 +1,7 @@
 ---
 title: Debugging latency using curl
 date: 2024-02-21
+comments: true
 authors:
     - jorge
 categories:

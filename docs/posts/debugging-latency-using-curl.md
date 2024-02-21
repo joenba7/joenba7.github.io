@@ -29,10 +29,10 @@ The output of the command is as follows:
 dns_resolution: 0.044536, tcp_established: 0.047217, ssl_handshake_done: 0.081556, TTFB: 0.216986
 ```
 
-* dns_resolution = Time to resolve DNS
-* tcp_established = Time to establish TCP connection
-* ssl_handshake_done: Time of SSL handshake
-* TTFB = Time To First Byte
+* dns_resolution == Time to resolve DNS
+* tcp_established == Time to establish TCP connection
+* ssl_handshake_done == Time of SSL handshake
+* TTFB == Time To First Byte
 
 The times are measured in seconds (ssl handshake - tcp time).
 

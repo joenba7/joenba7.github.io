@@ -25,7 +25,8 @@ NUMBER_OF_FILES="$(ls -t $FILE_DIR | wc -l)"
 RETAIN=10
 
 if [ "$NUMBER_OF_FILES" -ge "$RETAIN" ]; then
-    ls -t $FILE_DIR | sed -e "1,$RETAIN d" | xargs rm -f
+    cd $FILE_DIR
+    ls -t | sed -e "1,$RETAIN d" | xargs rm -f
 fi
 ```
 

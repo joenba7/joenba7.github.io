@@ -208,6 +208,9 @@ look at the configuration I use, see below. Have fun!
 # 0 is the first number
 set -g base-index 0
 
+# Bracketed paste mode - handle pasted content more accurately
+set -g @bracketed-paste on
+
 # Automatically set window title
 set-window-option -g automatic-rename on
 set-option -g set-titles on

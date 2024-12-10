@@ -32,7 +32,8 @@ while read LINE; do echo $LINE | grep https; done << EOF
 [jorge@jeb-desktop ~]$ while read LINE; do echo $LINE | grep https; done << EOF
 http://example.org/
 https://authority.example.com/
-https://www.example.com/                                                                                                http://example.com/
+https://www.example.com/
+http://example.com/
 EOF
 https://authority.example.com/
 https://www.example.com/ http://example.com/

@@ -1,6 +1,6 @@
 ---
 title: while read
-date: 2024-01-17
+date: 2024-12-10
 authors:
     - jorge
 categories:

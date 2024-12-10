@@ -36,5 +36,5 @@ https://www.example.com/
 http://example.com/
 EOF
 https://authority.example.com/
-https://www.example.com/ http://example.com/
+https://www.example.com/
 ```

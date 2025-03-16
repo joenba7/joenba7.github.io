@@ -97,6 +97,14 @@ the output should be something like:
 evdi/1.14.8 6.12.6-200.fc41.x86_64, x86_64: installed
 ```
 
+Also check with:
+
+```bash
+sudo systemctl status displaylink
+```
+
+..to see that the service is running as it should.
+
 Now connect your HDMI cable to the docking station, and the USB-C to your
 laptop. It should work! If not, reboot, and give it another try.
 

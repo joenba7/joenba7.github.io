@@ -24,7 +24,7 @@ docking station. It just wasn't working. This is what I did to fix the issue.
 
 <!-- more -->
 
-First, install mokutil and check if you have SecureBoot enabled:
+First, install **mokutil** and and **dkms**, then check if you have SecureBoot enabled:
 
 ```bash
 sudo dnf -y install mokutil dkms
@@ -33,7 +33,9 @@ sudo mokutil --sb-state
 
 If SecureBoot is enabled, it should return:
 
+```
 SecureBoot enabled
+```
 
 Now download the latest displaylink-rpm from
 https://github.com/displaylink-rpm/displaylink-rpm/releases. In this case we

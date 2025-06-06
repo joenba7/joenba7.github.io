@@ -1,0 +1,1365 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jorge.fbarr.net/2010/08/10/introduction-to-irssi/">
+      
+      
+        <link rel="prev" href="../../../06/09/fedora-13-on-the-acer-aspire-one/">
+      
+      
+        <link rel="next" href="../../20/nginx-php-mysql-and-wordpress-continued/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Introduction to irssi - The Road to Elysium</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inconsolata";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-6Y65E84W34"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-6Y65E84W34",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-6Y65E84W34",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#getting-started" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="The Road to Elysium" class="md-header__button md-logo" aria-label="The Road to Elysium" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Road to Elysium
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction to irssi
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="The Road to Elysium" class="md-nav__button md-logo" aria-label="The Road to Elysium" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    The Road to Elysium
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2024/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2024
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2023
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2021/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2021
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2020/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2020
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2018/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2018
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2017/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2017
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2016/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2016
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2015/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2015
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2014/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2014
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2013/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2013
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2012/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2012
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2011/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2011
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2010/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2010
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2009/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2009
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2008/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2008
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2007/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2007
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Categories
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/apple/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Apple
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/snippets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Snippets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/tutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Windows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting started
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customizing-the-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Customizing the settings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-to-an-irc-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connecting to an IRC-network
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-networks-servers-and-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding networks, servers and channels
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scripts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minor-adjustments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minor adjustments
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../.." class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://github.com/joenba7.png" alt="Jorge Enrique Barrera">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Jorge Enrique Barrera
+                        
+                      </strong>
+                      <br>
+                      Writer, father, nerd
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2010-08-10 00:00:00+00:00" class="md-ellipsis">August 10, 2010</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/linux/">Linux</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              7 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+
+
+  <h1>Introduction to irssi</h1>
+
+<p>There are a load of IRC clients for UNIX-based systems out there, but I personally feel that <strong>irssi</strong> suits me best. Incredibly flexible, adjustable for every user, and doesn’t depend on X to be able to run it. Haven’t really found a guide out there that explains things in an easy and understandable manner, aimed particularly at new users. So here’s my attempt at it.</p>
+<h2 id="getting-started">Getting started</h2>
+<p>What we need, of course, is <strong>irssi</strong> itself. You can get it at http://www.irssi.org/download, or use your system’s package manager to download it.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>yum install irssi
+</span></code></pre></div>
+<p>..for RPM-based systems.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo aptitude install irssi
+</span></code></pre></div>
+<p>..for Debian/Ubuntu type of distributions.</p>
+<p>Now, once installed, you can fire up <strong>irssi</strong> by typing</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>irssi
+</span></code></pre></div>
+<p>..in the commandline. You should now be running <strong>irssi</strong>, whoo!</p>
+<h2 id="customizing-the-settings">Customizing the settings</h2>
+<p>Now that <strong>irssi</strong> is up and going, you can change the settings, adjust it so that if suits you. By typing:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>/SET 
+</span></code></pre></div>
+<p>you will get a list of settings. For instance, let’s try out <strong>/SET nick</strong>. This is what pops up:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a> [completion]
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a> completion_nicks_lowercase = OFF
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a> [lookandfeel]
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a> hilight_nick_matches = ON
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a> query_track_nick_changes = ON
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a> show_nickmode = ON
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a> show_nickmode_empty = ON
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a> show_own_nickchange_once = OFF
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a> [misc]
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a> netjoin_max_nicks = 10
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a> netsplit_max_nicks = 10
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a> netsplit_nicks_hide_threshold = 15
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a> [server]
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a> alternate_nick = joenba7_
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a> nick = joenba7
+</span></code></pre></div>
+<p>Here you see the various settings containing the word nick. <strong>irssi</strong> will automatically set your nick based on your account name. So if your username on your machine is <strong>foo</strong>, <strong>irssi</strong> will set your nick to <strong>foo</strong>. You can of course change this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>/SET nick joenba7
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>/SET alternate_nick joenba7_
+</span></code></pre></div>
+<p>..followed up by a <strong>/SAVE</strong> and <strong>/RELOAD</strong> to save and reload the settings.</p>
+<p><strong>Note</strong>: Every time you change a default setting, you will have to use <strong>/SAVE</strong> to save the configuration.</p>
+<h2 id="connecting-to-an-irc-network">Connecting to an IRC-network</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>/SERVER powertech.no.eu.dal.net
+</span></code></pre></div>
+<p>This will then connect me to the server <strong>powertech.no.eu.dal.net</strong> on the DALnet network. At the same time though, I’d like to be on the <strong>EFnet</strong> network. You can connect to multiple networks by typing:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>/CONNECT irc.homelien.no
+</span></code></pre></div>
+<p>This connects you to the <strong>EFnet</strong> network as well. You are perhaps wondering how you can change from one network to the other? Look at your status-window. This is usually window number 1. Use <strong>ALT-1</strong> or <strong>ESC-1</strong> to change to that window. Right now my active network is <strong>EFnet</strong>, on the server <strong>irc.homelien.no</strong>. Which means that I’m seeing this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>[08:38] [joenba7(+i)] [1:homelien (change with ^X)]
+</span></code></pre></div>
+<p><strong>«Change with ^X»</strong> – As you’ve probably guessed, <strong>^X</strong> means <strong>Ctrl-X</strong>, so upon pressing it, you will change your active network. You will see something like this in your status window:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>08:38 -!- Irssi: Changed to server powertech.no.eu.dal.net
+</span></code></pre></div>
+<p>To disconnect from one of the servers, or stop <strong>irssi</strong>’s attempt at reconnecting, use:</p>
+<ul>
+<li><strong>/DISCONNECT</strong>  – Disconnects server with tag network.</li>
+<li><strong>/DISCONNECT recon-1</strong> – Cancels an attempt to connect to the server named recon-1.</li>
+<li><strong>/RMRECONNS</strong> – Cancels all attempts to reconnect.</li>
+<li><strong>/RECONNECT</strong> recon-1 – Will attempt to reconnect you to recon-1.</li>
+<li><strong>/RECONNECT ALL</strong> – Will attempt to reconnect to all the servers in the reconnection queue.</li>
+</ul>
+<h2 id="navigation">Navigation</h2>
+<p>You can scroll upwards/downwards with the <strong>Page Up</strong> / <strong>Page Down</strong> keys. If they aren’t working for you, you can use <strong>Meta-p</strong> / <strong>Meta-n</strong>, where <strong>Meta</strong> can be <strong>ESC</strong> and/or <strong>ALT</strong>.</p>
+<p>Default behavior is that <strong>irssi</strong> pretty much creates hidden windows for just about everything. Hidden windows are created every time you join a channel or start a conversation. There are different ways to switch between them:</p>
+<ul>
+<li><strong>Meta-1 .. Meta-0</strong> – Switch between window 1-10.</li>
+<li><strong>Meta-q .. Meta-o</strong> – Switch between window 11-19.</li>
+<li><strong>/WINDOW</strong> – Switch to window number .</li>
+<li><strong>Ctrl-p</strong> / <strong>Ctrl-n</strong> – Switch to the previous/next window.</li>
+</ul>
+<h2 id="adding-networks-servers-and-channels">Adding networks, servers and channels</h2>
+<p>On the network <strong>DALnet</strong> you have a function called <strong>Nickserv</strong>, which lets you register a nick, so that you can become the owner of it. To be able to use this nick you will have to identify to it when logging on to the IRC network. It’s a bit tiresome having to type <strong>/nickserv identify</strong> every time you connect. I’m assuming you want this a bit more automated? I at least do. :) But before we do this we have to do a couple of things. Like adding a network:</p>
+<p><strong>Note:</strong> use <strong>/IRCNET</strong> with version 0.8.9 and older.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>/NETWORK ADD 
+</span></code></pre></div>
+<p>For example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>/NETWORK ADD DALnet
+</span></code></pre></div>
+<p>To remove the network, use:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>/NETWORK REMOVE 
+</span></code></pre></div>
+<p>If you’d like to execute a command when logging on, like identifying to your nick, use <strong>-autosendcmd</strong>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>/NETWORK ADD -autosendcmd &quot;/nickserv identify  ;wait -DALnet 2000&quot; DALnet
+</span></code></pre></div>
+<p>The command above automatically sends the <strong>identify</strong>-command to <strong>Nickserv</strong> when you log on. The <strong>-wait 2000</strong> tells <strong>irssi</strong> to wait two seconds after having logged on to the server before sending the command.</p>
+<p>Now that we’ve added a network, we need servers to go along with it. The command to do so is:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>/SERVER ADD -network DALnet powertech.no.eu.dal.net 6667
+</span></code></pre></div>
+<p>If you’d like to automatically connect to this server when you start <strong>irssi</strong>, simply add an <strong>-auto</strong> right after <strong>ADD</strong>. Specifying the port is optional.</p>
+<p>So, first network, then server, now for a channel:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>/CHANNEL ADD -auto #linuxhjelp DALnet [password]
+</span></code></pre></div>
+<p><strong>[password]</strong> is optional, use of it depends on if the channel you’re trying to join needs a password to be accessed.</p>
+<h2 id="logging">Logging</h2>
+<p><strong>irssi</strong> has the ability to log both away-messages and regular conversations in channels. Logging for away messages is enabled by default, but not regular logging. First, it’s possible to define what the away-log should log:</p>
+<ul>
+<li><strong>/SET awaylog_level MSGS HILIGHT</strong> – Defines what kind of messages to log.</li>
+<li><strong>/SET awaylog_file ~/.irssi/away.log</strong> – Defines the file the log should write to.</li>
+</ul>
+<p>The easiest way of enabling logging, and not just away messages, is to execute:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>/SET autolog ON
+</span></code></pre></div>
+<p>Per default <strong>irssi</strong> logs to <strong>~/irclogs/something.log</strong>. This can be defined by:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>/SET autolog_path ~/irclogs/$tag/$0.log
+</span></code></pre></div>
+<p>That is the default value. The path will automatically be created if it doesn’t exist. <strong>$0</strong> points to the target (channel/nick). You can make <strong>irssi</strong> to automatically rotate the logs by adding a time/date stamp to the filename. You find more about the formatting used by typing <strong>man strftime</strong> in your commandline. Example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>/SET autolog_path ~/irclogs/%Y/$tag/$0.%m-%d.log
+</span></code></pre></div>
+<p><strong>%Y</strong> for year, <strong>%m</strong> for month and <strong>%d</strong> for day.</p>
+<p>For more information about logging have a look at:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>/HELP LOG
+</span></code></pre></div>
+<h2 id="scripts">Scripts</h2>
+<p>If you’ve used other IRC clients, you’ve probably encountered the possibility to use scripts. Scripts can be used for various things, from showing a channel what song you’re currently playing to flaunting your machine’s hardware specs. A good site for scripts is http://scripts.irssi.org.</p>
+<p>The scripts you download should be placed in <strong>~/.irssi/scripts/</strong>. If the folder doesn’t exist, create it yourself. Once the script is placed there, you can load it in your <strong>irssi</strong> by doing a:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>/SCRIPT LOAD ~/.irssi/scripts/TheScript.pl
+</span></code></pre></div>
+<p>This is a good approach if you don’t want certain scripts to load when <strong>irssi</strong> starts. If you do however want them to load when starting <strong>irssi</strong>, create a <strong>symlink</strong> in the folder <strong>~/.irssi/scripts/autorun</strong>, just create the folder if it doesn’t exist. <strong>symlink</strong>, what’s that? Well, it’s a special type of file that contains a reference to another file or directory in the form of an absolute or relative path. So in other words:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>cd ~/
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>wget http://scripts.irssi.org/scripts/splitlong.pl
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>mkdir -p ~/.irssi/scripts/autorun
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>mv ~/splitlong.pl ~/.irssi/scripts
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>cd ~/.irssi/scripts/autorun
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>ln -s ../splitlong.pl
+</span></code></pre></div>
+<p>So the file is really in <strong>~/.irssi/scripts</strong>, but you’ve made a shortcut to it from <strong>~/.irssi/scripts/autorun</strong>. Pretty neat if you ask me.</p>
+<p>To unload a script simply use:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>/SCRIPT UNLOAD 
+</span></code></pre></div>
+<h2 id="minor-adjustments">Minor adjustments</h2>
+<p>It’s not just what I’ve mentioned above that you can adjust and customize to your own liking. Another thing is the use of themes. You’re probably using the default blue theme that <strong>irssi</strong> comes with, which is just fine for my use, but perhaps not for you. I do however like the minor modification just for kicks.</p>
+<p>Every time you use <strong>/SAVE,</strong> a message like this will appear in your status window:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>08:38 -!- Irssi: Saved configuration to file /home/jorge/.irssi/config
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>08:38 -!- Irssi: Theme saved to /home/jorge/.irssi/default.theme
+</span></code></pre></div>
+<p>Settings are stored in the configuration file named <strong>config</strong> and the theme in <strong>default.theme</strong>. Both files are editable through a text editor. I’ve never really changed things manually in the config-file, but I’ve tampered with <strong>default.theme</strong> a bit, like what my own nick appears to me. Default appearance of your nick is like so:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>
+</span></code></pre></div>
+<p>Where <strong>YourNick</strong> is in bold white, while the inequality signs are in gray.</p>
+<p>Open the file <strong>~/.irssi/default.theme</strong> and find the line that says something like:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>ownmsgnick = &quot;{msgnick $0 $1-}&quot;;
+</span></code></pre></div>
+<p>Change this to:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>ownmsgnick = &quot;%R%n %|&quot;;
+</span></code></pre></div>
+<p>This will make the inequality signs turn red. Your nick will still be in white bold. But you can always change the inequality signs to something else. For instance:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>ownmsgnick = &quot;%Y(%n$0$1-%Y)%n %|&quot;;
+</span></code></pre></div>
+<p>Will make the parenthesis turn yellow. If you want to change the color of your nick, from default white to something else, find this line:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>ownnick = &quot;%W$*%n&quot;;
+</span></code></pre></div>
+<p>..and replace it with the color you want:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>ownnick = &quot;%G$*%n&quot;;
+</span></code></pre></div>
+<p>For a nice overview of colors, check out http://irssi.org/documentation/formats, and for more information about <strong>irssi</strong>, visit http://www.irssi.org/.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0</a> - Jorge Enrique Barrera</p>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/jorgeebarrera/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/joenba7" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.path", "content.code.copy", "content.code.select"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

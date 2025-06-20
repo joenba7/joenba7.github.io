@@ -1,48 +1,28 @@
-name: ci
-
+name: ci 
 on:
   push:
     branches:
       - main
-
 permissions:
   contents: write
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
-
-      - name: Create cache key
-        run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
-
-      - name: Cache pip/mkdocs-material
-        uses: actions/cache@v4
+          python-version: 3.x
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+      - uses: actions/cache@v3
         with:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache
           restore-keys: |
             mkdocs-material-
-
-      - name: Install MkDocs and theme
-        run: pip install mkdocs-material
-
-      - name: Deploy with ghp-import (manual)
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          pip install ghp-import
-          mkdocs build
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
-          ghp-import -n -p -f -m "Deploy docs" -r origin -b gh-pages site
-
+      - run: pip install mkdocs-material 
+      - run: mkdocs gh-deploy --force

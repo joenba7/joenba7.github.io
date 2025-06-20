@@ -18,7 +18,7 @@ I had an issue recently where I had to debug why a request to a website was
 taking such a long time. After a bit of searching around, I found the following
 bit of code:
 
-<!-- more -- >
+<!-- more -->
 
 ```bash
 curl -w "dns_resolution: %{time_namelookup}, tcp_established: %{time_connect}, ssl_handshake_done: %{time_appconnect}, TTFB: %{time_starttransfer}\n" -o /dev/null -s "https://jorge.fbarr.net/"

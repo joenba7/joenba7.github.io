@@ -205,11 +205,13 @@ That's basically what I need to know to use **tmux**! If you want to take a
 look at the configuration I use, see below. Have fun!
 
 ```bash
+## tmux.conf
+## Jorge Enrique Barrera <jorge@fbarr.net>
+
+## Settings ##
+
 # 0 is the first number
 set -g base-index 0
-
-# Bracketed paste mode - handle pasted content more accurately
-set -g @bracketed-paste on
 
 # Automatically set window title
 set-window-option -g automatic-rename on
@@ -238,6 +240,23 @@ set -sg escape-time 1
 # Reload tmux config with 'C-b r'
 bind r source-file ~/.tmux.conf
 
+# Enables vi mode. Enables searching with / in copy mode.
+setw -g mode-keys vi
+
+# Default terminal
+set -g default-terminal "xterm-256color"
+set -ga terminal-overrides ",*256col*:Tc"
+
+# SSH sock environment variable
+setenv -g SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
+
+
+## Style ##
+
+# Status bar format and colours
+set -g window-status-format '#[bg=colour237,fg=#f8f8f2] #I.#(pwd="#{pane_current_path}"; echo ${pwd####*/}): #W#F '
+set -g window-status-current-format '#[bg=colour39,fg=black] #I.#(pwd="#{pane_current_path}"; echo ${pwd####*/}): #W#F '
+
 # Pane border style colour
 set -g pane-border-style fg=colour237
 set -g pane-active-border-style fg=colour39
@@ -245,14 +264,6 @@ set -g pane-active-border-style fg=colour39
 # Active/Inactive window colour
 set -g window-style 'bg=colour235'
 set -g window-active-style 'bg=colour233'
-
-# Default terminal
-set -g default-terminal "xterm-256color"
-set -ga terminal-overrides ",*256col*:Tc"
-
-# Status bar format and colours
-set -g window-status-format '#[bg=colour237,fg=#f8f8f2] #I.#(pwd="#{pane_current_path}"; echo ${pwd####*/}): #W#F '
-set -g window-status-current-format '#[bg=colour39,fg=black] #I.#(pwd="#{pane_current_path}"; echo ${pwd####*/}): #W#F '
 
 # Status bar placement
 set -g status-justify centre
@@ -263,11 +274,8 @@ set -g status-position top
 # Status bar colours
 set -g status-fg white
 set -g status-bg "colour234"
-set -g status-left '#[fg=colour235,bg=colour252,bold] #S » #I #P '# SessionName
+set -g status-left '#[fg=colour235,bg=colour252,bold] #S » #I #P '#SessionName
 set -g status-right '#[bg=colour252,fg=colour235,bold] %Y-%m-%d %H:%M:%S #[default]'
-
-# SSH sock environment variable
-setenv -g SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
 ```
 
 ## Possible issues

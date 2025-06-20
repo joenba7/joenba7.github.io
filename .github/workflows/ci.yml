@@ -35,16 +35,14 @@ jobs:
       - name: Install MkDocs and theme
         run: pip install mkdocs-material
 
-      - name: Debug mkdocs gh-deploy with Git trace
+      - name: Deploy with ghp-import (manual)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GIT_TRACE: 1
         run: |
+          pip install ghp-import
+          mkdocs build
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
-          # Force remote to use token auth
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
-          
-          # Run deployment with verbose and trace enabled
-          mkdocs gh-deploy --force --verbose
+          ghp-import -n -p -f -m "Deploy docs" -r origin -b gh-pages site
+

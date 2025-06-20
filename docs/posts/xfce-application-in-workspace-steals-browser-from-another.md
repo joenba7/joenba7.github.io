@@ -25,7 +25,7 @@ xconf-query -c xfwm4 -p /general/activate_action -s switch
 What this does:
 
 * **xfconf-query** — a command-line tool to query or set Xfce settings.
-* **-c xfwm4 — selects** the channel (in this case, settings related to the Xfce Window Manager, xfwm4).
+* **-c xfwm4** — selects the channel (in this case, settings related to the Xfce Window Manager, xfwm4).
 * **-p /general/activate_action** — specifies the property to modify (here: what happens when a window is activated).
 * **-s switch** — sets the value of the property to switch.
 

@@ -1,5 +1,5 @@
 ---
-title: XFCE - Application in workspace steals browser from another
+title: XFCE Application in workspace steals browser from another
 date: 2025-06-20
 authors:
     - jorge

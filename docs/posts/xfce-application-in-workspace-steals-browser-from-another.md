@@ -12,7 +12,7 @@ tags:
     - xfwm4
 ---
 
-This problem has been bugging me for some time. I am currently running the XFCE spinoff of Fedora 42, and I have multiple workspaces set up. If I click a link on my workspace that has my e-mail client, it steals the browser my Browser-workspace, and moves it to my e-mail workspace. The fix? Pretty simple.
+This problem has been bugging me for some time. I am currently running the XFCE spinoff of Fedora 42, and I have multiple workspaces set up. If I click a link on my workspace that has my e-mail client, it steals the browser in my Browser-workspace, and moves it to my e-mail workspace. The fix? Pretty simple.
 
 <!-- more -->
 

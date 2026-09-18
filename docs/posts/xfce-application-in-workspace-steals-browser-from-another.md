@@ -8,7 +8,7 @@ categories:
 tags:
     - xfce
     - browser
-    - xconf-query
+    - xfconf-query
     - xfwm4
 ---
 
@@ -19,7 +19,7 @@ This problem has been bugging me for some time. I am currently running the XFCE 
 Run the command:
 
 ```bash
-xconf-query -c xfwm4 -p /general/activate_action -s switch
+xfconf-query -c xfwm4 -p /general/activate_action -s switch
 ```
 
 What this does:

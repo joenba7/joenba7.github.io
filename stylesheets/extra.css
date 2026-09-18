@@ -1,0 +1,31 @@
+/* Farge på header */
+.md-header {
+    background-color: #21759b;
+}
+
+.md-typeset strong {
+    color: #ff82b2;
+}
+
+.md-grid {
+  max-width: 75%;
+
+}
+
+.md-typeset h1, h2, h3, h4 {
+    font-weight: bold;
+}
+
+a.tocheader {
+    color: red;
+}
+
+/* Farge påteksten påforsiden */
+div.md-post__content {
+    color: white;
+}
+
+.md-content__inner {
+    color: white;
+}
+
